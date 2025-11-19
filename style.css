@@ -1,0 +1,340 @@
+/* Definição de Variáveis CSS (Cores e Fontes) */
+:root {
+    /* Paleta de Cores baseada no degradê das imagens */
+    --cor-verde-escuro: #4CAF50; /* Cor principal, remete à natureza e saúde */
+    --cor-verde-claro: #8BC34A;
+    --cor-laranja-claro: #FF9800; /* Cor de destaque/ação, remete ao apetite e energia */
+    --cor-marrom-claro: #A1887F; /* Cor neutra para o cabeçalho e fundo sutil */
+    --cor-texto-principal: #333333;
+    --cor-texto-claro: #ffffff;
+    --cor-fundo-transparente: rgba(255, 255, 255, 0.85); /* Fundo dos cards/blocos */
+    --cor-botao-principal: #FF5722; /* Laranja/vermelho vibrante para Call to Action (CTA) */
+    --cor-fundo-input: rgba(255, 255, 255, 0.6);
+
+    /* Tipografia (Ajustar a fonte conforme a que mais se aproxima, ex: Roboto) */
+    --fonte-principal: 'Roboto', 'Arial', sans-serif;
+}
+
+/* --- Estilos Gerais e Reset Básico --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background: linear-gradient(135deg, var(--cor-verde-claro) 0%, var(--cor-laranja-claro) 100%);
+    min-height: 100vh;
+    color: var(--cor-texto-principal);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Cabeçalho/Navegação (NavBar) --- */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    color: var(--cor-texto-claro);
+    font-weight: 500;
+    /* Remove a borda daqui */
+}
+
+.barra-nav {
+    width: 100%;
+    height: 7px;
+    background: #000;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.hero-section {
+    margin-top: 20px; /* ajuste conforme necessário */
+    background: linear-gradient(90deg, #7ecb5c, #d7c34d, #ff8b2d);
+
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.logo-icon {
+    /* Estilo para o ícone da folha */
+    margin-right: 8px;
+    /* Poderia ser um SVG ou um ícone de fonte */
+}
+
+.nav-links a {
+    margin-left: 25px;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--cor-verde-escuro);
+}
+
+.nav-button {
+    background-color: transparent;
+    border: 2px solid var(--cor-texto-claro);
+    color: var(--cor-texto-claro);
+    padding: 8px 20px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-marrom-claro);
+}
+
+.divider {
+    width: 100%;
+    height: 4px;     /* espessura */
+    background-color: #000; /* cor */
+    
+}
+
+/* --- Conteúdo Principal e Seções (Páginas) --- */
+.main-content {
+    padding: 50px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Estilo para o título principal (Ex: "DOE AGORA", "CADASTRE-SE!") */
+.main-title {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: var(--cor-botao-principal);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: var(--cor-texto-principal);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* --- Cartões/Caixas de Conteúdo --- */
+.card-section {
+    background-color: var(--cor-fundo-transparente);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-basis: 45%; /* Para o layout de 2 colunas */
+    min-width: 300px;
+}
+
+/* Estilos Específicos para a Página Inicial (inicio.jpg) */
+.hero-container {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 900px; /* aumenta suavemente */
+    width: 80%;
+    background: url('caminho/para/imagem-fome.jpg') center/cover no-repeat;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    color: #ffffff;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    color: #ffffff;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons button {
+    padding: 15px 30px;
+    margin: 0 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-pessoa {
+    background-color: var(--cor-laranja-claro);
+    color: #ffffff;
+}
+
+.btn-empresa {
+    background-color: var(--cor-botao-principal);
+    color: #ffffff;
+}
+
+/* --- Estilos de Formulário (doacao.jpg, cadastro.jpg, retirada.jpg) --- */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--cor-fundo-input);
+    font-size: 1em;
+}
+
+.form-title {
+    font-size: 1.8em;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: var(--cor-verde-escuro);
+}
+
+/* Específico para a página de Cadastro (2 Colunas) */
+.cadastro-familia, .cadastro-empresa {
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.cadastro-familia {
+    background-color: rgba(139, 195, 74, 0.7); /* Verde mais sólido */
+    color: var(--cor-texto-claro);
+    flex-basis: 48%;
+}
+
+.cadastro-empresa {
+    background-color: rgba(255, 152, 0, 0.7); /* Laranja mais sólido */
+    color: var(--cor-texto-principal);
+    flex-basis: 48%;
+}
+
+.cadastro-familia .form-title, .cadastro-empresa .form-title {
+    color: var(--cor-texto-principal); /* Ou branco para família, preto para empresa */
+}
+
+/* Botão de Ação Principal (Concluir, Marcar Retirada) */
+.btn-action-main {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--cor-botao-principal);
+    color: var(--cor-texto-claro);
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+.btn-action-main:hover {
+    background-color: #E64A19;
+    transform: translateY(-2px);
+}
+
+/* --- Estilos Específicos para a Página de Doação (doacao.jpg) --- */
+.donation-grid {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.donation-form {
+    flex-basis: 60%;
+    padding-right: 40px;
+}
+
+.donation-info {
+    flex-basis: 40%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.pix-qr-code {
+    width: 150px;
+    height: 150px;
+    background-color: #ffffff;
+    margin: 20px auto;
+}
+
+.pix-key {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.why-donate h3 {
+    color: var(--cor-verde-escuro);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 800;
+}
+
+/* --- Estilos Específicos para a Página de Retirada (retirada.jpg) --- */
+.retirada-box {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* --- Media Queries (Responsividade) --- */
+@media (max-width: 800px) {
+    .donation-grid {
+        flex-direction: column;
+    }
+
+    .donation-form {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .card-section {
+        flex-basis: 100%;
+        margin: 15px 0;
+    }
+
+    .hero-container {
+        padding: 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2em;
+    }
+}
