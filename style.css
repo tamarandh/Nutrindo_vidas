@@ -338,3 +338,194 @@ a {
         font-size: 2.2em;
     }
 }
+
+/* --- Estilos Específicos para a Página de Doação --- */
+
+/* Estilos de Cores e Fontes (Repetição das variáveis para contexto, use o :root já existente) */
+/*
+:root {
+    --cor-verde-escuro: #4CAF50;
+    --cor-laranja-claro: #FF9800;
+    --cor-botao-principal: #FF5722;
+    --cor-texto-principal: #333333;
+    --cor-texto-claro: #ffffff;
+    --cor-fundo-transparente: rgba(255, 255, 255, 0.85);
+    --cor-fundo-input: rgba(255, 255, 255, 0.6);
+}
+*/
+
+/* ⚠️ Correção na estrutura HTML: O HTML fornecido tinha duas tags <header> aninhadas.
+   Presumi que o conteúdo principal de doação deveria estar dentro do .main-content. */
+.doe-container {
+    width: 100%;
+    max-width: 1100px; /* Largura maior para comportar bem as duas colunas */
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Título Principal "DOE AGORA" */
+.doe-container h1 {
+    font-size: 3em;
+    font-weight: 900;
+    color: var(--cor-botao-principal);
+    margin-bottom: 5px;
+}
+
+/* Subtítulo "Seja a DIFERENÇA..." */
+.doe-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.doe-container p span {
+    font-weight: 900;
+}
+
+/* Contêiner que divide o conteúdo em duas colunas (Formulário e PIX) */
+.doe-content {
+    display: flex;
+    gap: 30px;
+    background-color: var(--cor-fundo-transparente); /* Fundo claro para o card inteiro */
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+}
+
+/* --- Bloco Esquerda: Formulário de Doação (.doe-form) --- */
+.doe-form {
+    flex: 1.5; /* Ocupa um pouco mais de espaço */
+    text-align: left;
+}
+
+.doe-form .campo {
+    margin-bottom: 20px;
+}
+
+.doe-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: var(--cor-texto-principal);
+}
+
+.doe-form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--cor-fundo-input);
+    font-size: 1em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a seção de revisão (Revise sua doação) */
+.doe-form h3 {
+    font-size: 1.2em;
+    font-weight: 800;
+    margin: 30px 0 15px 0;
+    color: var(--cor-verde-escuro);
+}
+
+.revisao {
+    display: flex;
+    gap: 20px;
+}
+
+.revisao .campo {
+    flex: 1; /* Divide o valor e pagamento em 2 colunas pequenas */
+    margin-bottom: 0;
+}
+
+/* Botão Concluir Doação */
+.doe-form .btn {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--cor-botao-principal);
+    color: var(--cor-texto-claro);
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 30px;
+}
+
+.doe-form .btn:hover {
+    background-color: #E64A19;
+    transform: translateY(-2px);
+}
+
+/* --- Bloco Direita: Informações de PIX e QR Code (.doe-info) --- */
+.doe-info {
+    flex: 1; /* Ocupa o restante do espaço */
+    text-align: center;
+    padding: 30px 20px;
+    /* Degradê suave de fundo para destacar este bloco, como na imagem do protótipo */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.3) 100%);
+    border-radius: 15px;
+}
+
+.doe-info h3 {
+    font-size: 1.5em;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--cor-verde-escuro); /* Título Pix e Por que importa */
+}
+
+.doe-info p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    text-align: justify; /* Alinhamento justificado para o texto longo */
+}
+
+.doe-info p:first-of-type {
+    text-align: center; /* Centraliza o texto curto sobre o PIX */
+}
+
+/* Estilo para o QR Code */
+.qr-code {
+    width: 150px;
+    height: 150px;
+    background-color: #ffffff;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto 30px auto;
+    display: block; /* Garante que o QR code e a margem funcionem corretamente */
+}
+
+/* Ajuste de margem para o segundo H3 (Por que sua doação importa?) */
+.doe-info h3:nth-of-type(2) {
+    margin-top: 30px;
+    color: var(--cor-verde-escuro);
+}
+
+/* --- Media Queries (Responsividade) --- */
+@media (max-width: 950px) {
+    .doe-content {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .doe-form, .doe-info {
+        width: 100%;
+    }
+
+    .donation-form {
+        padding-right: 0;
+    }
+
+    .revisao {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .revisao .campo {
+        width: 100%;
+    }
+}
+
